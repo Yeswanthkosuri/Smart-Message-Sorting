@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Message Sorting</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="light-theme">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="active"><i class="fas fa-inbox"></i> Inbox</a>
+        <a href="#" id="newMessageSidebar"><i class="fas fa-plus"></i> New Message</a>
+        <a href="#" data-category="banking"><i class="fas fa-university"></i> Banking</a>
+        <a href="#" data-category="fake"><i class="fas fa-ban"></i> Fake/Spam</a>
+        <a href="#" data-category="otp"><i class="fas fa-key"></i> OTPs</a>
+        <a href="#" data-category="school"><i class="fas fa-graduation-cap"></i> School/University</a>
+        <a href="#" data-category="personal"><i class="fas fa-user"></i> Personal</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="message-container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">📩 Smart Message Sorting</a>
+                <input type="text" id="searchBar" class="form-control w-25" placeholder="Search Messages...">
+                <button id="themeToggle" class="btn btn-light">🌙</button>
+            </div>
+        </nav>
+
+        
+
+        <!-- New Message Modal -->
+        <div id="newMessageModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Compose New Message</h2>
+                <input type="text" id="mobileNumber" class="form-control" placeholder="Enter Mobile Number">
+                <select id="messageCategory" class="form-control mt-2">
+                    <option value="banking">Banking</option>
+                    <option value="fake">Fake/Spam</option>
+                    <option value="otp">OTPs</option>
+                    <option value="school">School/University</option>
+                    <option value="personal">Personal</option>
+                </select>
+                <textarea id="newMessageText" class="form-control mt-2" placeholder="Type your message..."></textarea>
+                <button id="sendNewMessage" class="btn btn-primary mt-2">Send</button>
+            </div>
+        </div>
+
+        <!-- Messages Section -->
+        <div class="container mt-3">
+            <div class="message-list active" id="banking"></div>
+            <div class="message-list" id="fake"></div>
+            <div class="message-list" id="otp"></div>
+            <div class="message-list" id="school"></div>
+            <div class="message-list" id="personal"></div>
+        </div>
+
+        <!-- Reply Section -->
+        <div class="reply-container mt-3 p-3 glassmorphism">
+            <input type="text" id="replyInput" class="form-control" placeholder="Type your message...">
+            <button id="sendReply" class="btn btn-primary mt-2">Send</button>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab"><i class="fas fa-plus"></i></button>
+
+</body>
+</html>
